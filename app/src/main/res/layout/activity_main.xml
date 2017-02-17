@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="team.bsru.apirat.apirat_app.MainActivity"
+    android:background="@drawable/abc1"
+    android:padding="0dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:id="@+id/boxlogo"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:layout_alignParentTop="true"
+            app:srcCompat="@drawable/www"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:text="bsru team"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:textSize="40sp"
+            android:textColor="#e7e9eff1"
+            android:textAllCaps="false"
+            android:layout_marginTop="-20dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/boxlogo"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_vertical"
+            android:id="@+id/input1"
+            android:background="#71555664">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/my_user_icon"
+                android:id="@+id/imageView2" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/user_input"
+                android:layout_weight="1"
+                android:textColorHint="#ffffff"
+                android:hint="User :"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/input2"
+            android:layout_marginTop="10dp"
+            android:background="#71555664">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/my_pass_icon"
+                android:id="@+id/imageView3" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/pass_input"
+                android:layout_weight="1"
+                android:hint="Password :"
+                android:textColorHint="#c8ffffff"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <Button
+            android:text="Sing In"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button"
+            android:layout_marginTop="25dp"
+            android:background="#237db8"
+            android:textSize="21sp"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:elevation="1dp" />
+    </LinearLayout>
+
+    <Button
+        android:text="Create User"
+        android:layout_width="match_parent"
+        android:id="@+id/button2"
+        android:layout_alignParentBottom="true"
+        android:layout_height="70dp"
+        android:layout_marginTop="5dp"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textColor="#77797d"
+        android:background="#23232e" />
+
+</RelativeLayout>
