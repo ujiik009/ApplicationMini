@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import okhttp3.OkHttpClient;
+
 public class CreateUserActivity extends AppCompatActivity {
     //val
     private EditText strcodeEditText,
@@ -38,7 +40,7 @@ public class CreateUserActivity extends AppCompatActivity {
                 }else {
                     if (passEditText.getText().toString().equals( confEditText.getText().toString())) {
 
-                        showAlert.ShowDialog("true", passEditText.getText() + "==>" + confEditText.getText());
+                        showAlert.ShowDialog("true", "Intent");
                     } else {
 
                         showAlert.ShowDialog("false",passEditText.getText()+"==>"+confEditText.getText());
