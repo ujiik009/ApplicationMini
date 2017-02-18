@@ -30,6 +30,8 @@ public class CreateUserActivity extends AppCompatActivity {
         confEditText = (EditText) findViewById(R.id.edConfpass);
         createUserButton = (Button) findViewById(R.id.createButton);
 
+        final Myconstant myconstant = new Myconstant();
+
         createUserButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,7 +43,7 @@ public class CreateUserActivity extends AppCompatActivity {
 
 
                         ClassCreateUser classCreateUser = new ClassCreateUser(CreateUserActivity.this);
-                        classCreateUser.execute("http://192.168.1.37/Service_php_for_android/service/createUser.php?" +
+                        classCreateUser.execute(myconstant.getServiceCreateUser() +
                                 //sent value URL
                                 "studentCode=" + strcodeEditText.getText() + "&" +
                                 "username=" + userEditText.getText() + "&" +
