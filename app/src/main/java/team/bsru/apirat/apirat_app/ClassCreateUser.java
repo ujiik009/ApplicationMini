@@ -19,7 +19,6 @@ public class ClassCreateUser extends AsyncTask<String, Void, String>{
 
     public ClassCreateUser(Context context) {
         this.context = context;
-
     }
 
     @Override
@@ -37,11 +36,12 @@ public class ClassCreateUser extends AsyncTask<String, Void, String>{
             Request.Builder builder = new Request.Builder();
             Request request = builder.url(strings[0]).build();
             Response response = okHttpClient.newCall(request).execute();
-            Log.d("OKhttp", "res ==>" + response.body().string());
-            return response.body().string();
+            String resJson = response.body().string();
+            Log.d("OKhttp", "res try ==>" + resJson);
+            return resJson;
 
         } catch (Exception e) {
-            Log.d("OKhttp", "res ==>" + e.toString());
+            Log.d("OKhttp", "res  ==>" + e.toString());
             return null;
         }
 

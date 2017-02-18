@@ -1,10 +1,15 @@
 package team.bsru.apirat.apirat_app;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 
 public class CreateUserActivity extends AppCompatActivity {
@@ -15,10 +20,12 @@ public class CreateUserActivity extends AppCompatActivity {
             passEditText,
             confEditText;
     private Button createUserButton;
+    private boolean status;
+    private String pathImg;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_user);
 
@@ -41,15 +48,34 @@ public class CreateUserActivity extends AppCompatActivity {
                 } else {
                     if (passEditText.getText().toString().equals(confEditText.getText().toString())) {
 
+                        try {
+                            ClassCreateUser classCreateUser = new ClassCreateUser(CreateUserActivity.this);
+                            classCreateUser.execute(myconstant.getServiceCreateUser() +
+                                    //sent value URL
+                                    "studentCode=" + strcodeEditText.getText() + "&" +
+                                    "username=" + userEditText.getText() + "&" +
+                                    "password=" + passEditText.getText() + "&" +
+                                    "BookCode=" + bookEditText.getText()
+                            );
+                            String strJson = classCreateUser.get();
+                            JSONArray respontServiceJsonArray = new JSONArray(strJson);
+                            for (int i = 0; i < respontServiceJsonArray.length(); i++) {
+                                JSONObject jsonObject = respontServiceJsonArray.getJSONObject(i);
+                                status = jsonObject.getBoolean("status");
+                                pathImg = jsonObject.getString("pathQR");
+                            }//for
+                            if (status == true) {
+                                Intent intent = new Intent(CreateUserActivity.this, ShowQR.class);
+                                intent.putExtra("pic", pathImg.toString());
+                                startActivity(intent);
+                                finish();
 
-                        ClassCreateUser classCreateUser = new ClassCreateUser(CreateUserActivity.this);
-                        classCreateUser.execute(myconstant.getServiceCreateUser() +
-                                //sent value URL
-                                "studentCode=" + strcodeEditText.getText() + "&" +
-                                "username=" + userEditText.getText() + "&" +
-                                "password=" + passEditText.getText() + "&" +
-                                "BookCode=" + bookEditText.getText()
-                        );
+                            }
+                            Log.d("resp", "array try join==>" + status);
+                        } catch (Exception e) {
+                            Log.d("resp", "array error join==>" + e.toString());
+                        }
+
                     } else {
 
                         showAlert.ShowDialog("false", passEditText.getText() + "==>" + confEditText.getText());
