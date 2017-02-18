@@ -7,14 +7,13 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
-
 public class CreateUserActivity extends AppCompatActivity {
     //val
     private EditText strcodeEditText,
-                    bookEditText,
-                    userEditText,
-                    passEditText,
-                    confEditText;
+            bookEditText,
+            userEditText,
+            passEditText,
+            confEditText;
     private Button createUserButton;
 
 
@@ -36,16 +35,22 @@ public class CreateUserActivity extends AppCompatActivity {
             public void onClick(View view) {
                 ShowAlert showAlert = new ShowAlert(CreateUserActivity.this);
                 if (strcodeEditText.getText().toString().equals("") || bookEditText.getText().toString().equals("") || userEditText.getText().toString().equals("") || passEditText.getText().toString().equals("") || confEditText.getText().toString().equals("")) {
-                    showAlert.ShowDialog("have space","try again ");
-                }else {
-                    if (passEditText.getText().toString().equals( confEditText.getText().toString())) {
+                    showAlert.ShowDialog("have space", "try again ");
+                } else {
+                    if (passEditText.getText().toString().equals(confEditText.getText().toString())) {
 
-                        showAlert.ShowDialog("true", "Intent");
+
                         ClassCreateUser classCreateUser = new ClassCreateUser(CreateUserActivity.this);
-                        classCreateUser.execute("http://swiftcodingthai.com/bsru/get_user_apirat.php");
+                        classCreateUser.execute("http://192.168.1.37/Service_php_for_android/service/createUser.php?" +
+                                //sent value URL
+                                "studentCode=" + strcodeEditText.getText() + "&" +
+                                "username=" + userEditText.getText() + "&" +
+                                "password=" + passEditText.getText() + "&" +
+                                "BookCode=" + bookEditText.getText()
+                        );
                     } else {
 
-                        showAlert.ShowDialog("false",passEditText.getText()+"==>"+confEditText.getText());
+                        showAlert.ShowDialog("false", passEditText.getText() + "==>" + confEditText.getText());
                     }
 
                 }
