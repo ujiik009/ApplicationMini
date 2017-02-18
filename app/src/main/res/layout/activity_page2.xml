@@ -12,4 +12,9 @@
     android:background="@drawable/abc1"
     android:gravity="center_vertical">
 
+    <Button
+        android:text="showpro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/load" />
 </RelativeLayout>

@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 public class Page2 extends AppCompatActivity {
     private TextView h, i, s;
+    private Button showLoad;
 
 
 
@@ -21,6 +22,20 @@ public class Page2 extends AppCompatActivity {
         setContentView(R.layout.activity_page2);
         Toast.makeText(Page2.this,"Welcome",
                 Toast.LENGTH_LONG).show();
+
+        //bind View
+
+        showLoad = (Button) findViewById(R.id.load);
+
+        showLoad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ShowProgressDialog showProgressDialog = new ShowProgressDialog(Page2.this);
+                showProgressDialog.ShowProgressAlert();
+
+            }
+        });
+
 
     }
 

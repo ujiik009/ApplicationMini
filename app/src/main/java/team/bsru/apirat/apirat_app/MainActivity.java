@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Page2.class);
+                Intent intent = new Intent(MainActivity.this, CreateUserActivity.class);
                 intent.putExtra("User", user_input.getText().toString());
                 startActivity(intent);
             }
