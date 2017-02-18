@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import okhttp3.OkHttpClient;
+
 
 public class CreateUserActivity extends AppCompatActivity {
     //val
@@ -41,6 +41,8 @@ public class CreateUserActivity extends AppCompatActivity {
                     if (passEditText.getText().toString().equals( confEditText.getText().toString())) {
 
                         showAlert.ShowDialog("true", "Intent");
+                        ClassCreateUser classCreateUser = new ClassCreateUser(CreateUserActivity.this);
+                        classCreateUser.execute("http://swiftcodingthai.com/bsru/get_user_apirat.php");
                     } else {
 
                         showAlert.ShowDialog("false",passEditText.getText()+"==>"+confEditText.getText());
