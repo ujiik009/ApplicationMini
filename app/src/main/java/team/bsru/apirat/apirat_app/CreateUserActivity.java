@@ -32,13 +32,20 @@ public class CreateUserActivity extends AppCompatActivity {
         createUserButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (passEditText.getText().toString().equals( confEditText.getText().toString())) {
-                    ShowAlert showAlert = new ShowAlert(CreateUserActivity.this);
-                    showAlert.ShowDialog("true", passEditText.getText() + "==>" + confEditText.getText());
-                } else {
-                    ShowAlert showAlert = new ShowAlert(CreateUserActivity.this);
-                    showAlert.ShowDialog("false",passEditText.getText()+"==>"+confEditText.getText());
+                ShowAlert showAlert = new ShowAlert(CreateUserActivity.this);
+                if (strcodeEditText.getText().toString().equals("") || bookEditText.getText().toString().equals("") || userEditText.getText().toString().equals("") || passEditText.getText().toString().equals("") || confEditText.getText().toString().equals("")) {
+                    showAlert.ShowDialog("have space","try again ");
+                }else {
+                    if (passEditText.getText().toString().equals( confEditText.getText().toString())) {
+
+                        showAlert.ShowDialog("true", passEditText.getText() + "==>" + confEditText.getText());
+                    } else {
+
+                        showAlert.ShowDialog("false",passEditText.getText()+"==>"+confEditText.getText());
+                    }
+
                 }
+
 
             }
         });
