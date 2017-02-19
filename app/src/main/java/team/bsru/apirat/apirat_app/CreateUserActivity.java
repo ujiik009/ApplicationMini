@@ -55,7 +55,8 @@ public class CreateUserActivity extends AppCompatActivity {
                                     "studentCode=" + strcodeEditText.getText() + "&" +
                                     "username=" + userEditText.getText() + "&" +
                                     "password=" + passEditText.getText() + "&" +
-                                    "BookCode=" + bookEditText.getText()
+                                    "BookCode=" + bookEditText.getText() + "&" +
+                                    "Domain=" + myconstant.getServerDomain()
                             );
                             String strJson = classCreateUser.get();
                             JSONArray respontServiceJsonArray = new JSONArray(strJson);

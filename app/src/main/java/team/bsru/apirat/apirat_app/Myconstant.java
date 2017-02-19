@@ -5,9 +5,13 @@ package team.bsru.apirat.apirat_app;
  */
 
 public class Myconstant {
-    private String serviceCreateUser = "http://192.168.1.37/Service_php_for_android/service/createUser.php?";
-
+    private String serviceCreateUser = "http://tait.bsruteam.tk/Service_php_for_android/service/createUser.php?";
+    private String serverDomain = "http://tait.bsruteam.tk/Service_php_for_android/";
     public String getServiceCreateUser() {
         return serviceCreateUser;
+    }
+
+    public String getServerDomain() {
+        return serverDomain;
     }
 }
