@@ -13,21 +13,21 @@ import com.squareup.okhttp.Response;
  * Created by ikool009 on 18/2/2560.
  */
 
-public class ClassCreateUser extends AsyncTask<String, Void, String>{
+public class GetDatatoserver extends AsyncTask<String, Void, String>{
     private Context context;
     private ProgressDialog progressDialog;
 
-    public ClassCreateUser(Context context) {
+    public GetDatatoserver(Context context) {
         this.context = context;
     }
 
-    @Override
-    protected void onPreExecute() {
-        super.onPreExecute();
-        progressDialog = ProgressDialog.show(context, "Checking",
-                "Please Wait Few Minus ...");
-
-    }
+//    @Override
+//    protected void onPreExecute() {
+//        super.onPreExecute();
+//        progressDialog = ProgressDialog.show(context, "Checking",
+//                "Please Wait ...");
+//
+//    }
 
     @Override
     protected String doInBackground(String... strings) {

@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -21,7 +22,7 @@ public class CreateUserActivity extends AppCompatActivity {
             confEditText;
     private Button createUserButton;
     private boolean status;
-    private String pathImg;
+    private String pathImg,massage;
 
 
     @Override
@@ -49,8 +50,8 @@ public class CreateUserActivity extends AppCompatActivity {
                     if (passEditText.getText().toString().equals(confEditText.getText().toString())) {
 
                         try {
-                            ClassCreateUser classCreateUser = new ClassCreateUser(CreateUserActivity.this);
-                            classCreateUser.execute(myconstant.getServiceCreateUser() +
+                            GetDatatoserver getDatatoserver = new GetDatatoserver(CreateUserActivity.this);
+                            getDatatoserver.execute(myconstant.getServiceCreateUser() +
                                     //sent value URL
                                     "studentCode=" + strcodeEditText.getText() + "&" +
                                     "username=" + userEditText.getText() + "&" +
@@ -58,18 +59,24 @@ public class CreateUserActivity extends AppCompatActivity {
                                     "BookCode=" + bookEditText.getText() + "&" +
                                     "Domain=" + myconstant.getServerDomain()
                             );
-                            String strJson = classCreateUser.get();
+                            String strJson = getDatatoserver.get();
                             JSONArray respontServiceJsonArray = new JSONArray(strJson);
                             for (int i = 0; i < respontServiceJsonArray.length(); i++) {
                                 JSONObject jsonObject = respontServiceJsonArray.getJSONObject(i);
                                 status = jsonObject.getBoolean("status");
                                 pathImg = jsonObject.getString("pathQR");
+                                massage = jsonObject.getString("massage");
                             }//for
                             if (status == true) {
+                                Toast.makeText(CreateUserActivity.this, massage, Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(CreateUserActivity.this, ShowQR.class);
                                 intent.putExtra("pic", pathImg.toString());
                                 startActivity(intent);
                                 finish();
+
+                            }else{
+
+                                Toast.makeText(CreateUserActivity.this, massage, Toast.LENGTH_LONG).show();
 
                             }
                             Log.d("resp", "array try join==>" + status);
