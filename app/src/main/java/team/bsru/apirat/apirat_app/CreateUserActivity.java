@@ -22,7 +22,7 @@ public class CreateUserActivity extends AppCompatActivity {
             confEditText;
     private Button createUserButton;
     private boolean status;
-    private String pathImg,massage;
+    private String pathImg, massage;
 
 
     @Override
@@ -74,18 +74,14 @@ public class CreateUserActivity extends AppCompatActivity {
                                 startActivity(intent);
                                 finish();
 
-                            }else{
-
+                            } else {
                                 Toast.makeText(CreateUserActivity.this, massage, Toast.LENGTH_LONG).show();
-
                             }
                             Log.d("resp", "array try join==>" + status);
                         } catch (Exception e) {
                             Log.d("resp", "array error join==>" + e.toString());
                         }
-
                     } else {
-
                         showAlert.ShowDialog("false", passEditText.getText() + "==>" + confEditText.getText());
                     }
 
