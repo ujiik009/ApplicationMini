@@ -38,6 +38,7 @@ public class GetDatatoserver extends AsyncTask<String, Void, String>{
             Response response = okHttpClient.newCall(request).execute();
             String resJson = response.body().string();
             Log.d("OKhttp", "res try ==>" + resJson);
+
             return resJson;
 
         } catch (Exception e) {

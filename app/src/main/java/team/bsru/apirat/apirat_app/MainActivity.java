@@ -3,15 +3,23 @@ package team.bsru.apirat.apirat_app;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     // Explicit
 
     private Button singinButton,createButton;
     private EditText user_input, pass_input;
+    private Boolean status;
+    private String message;
+    private String stt_json_data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +40,37 @@ public class MainActivity extends AppCompatActivity {
 
                     showAlert.ShowDialog("Have Space","Try again");
                 }else{
-                    showAlert.ShowDialog("Welcome",user_input.getText().toString());
+                    try {
+                        //showAlert.ShowDialog("Welcome",user_input.getText().toString());
+                        GetDatatoserver loginDatatoserver = new GetDatatoserver(MainActivity.this);
+                        Myconstant myconstant = new Myconstant();
+                        loginDatatoserver.execute(myconstant.getServiceLogin() +
+                                "username=" + user_input.getText() + "&" +
+                                "password=" + pass_input.getText()
+                        );
+                        String strJson = loginDatatoserver.get();
+                        JSONArray respontServiceJsonArray = new JSONArray(strJson);
+
+                        for (int i = 0; i < respontServiceJsonArray.length(); i++) {
+                            JSONObject jsonObject = respontServiceJsonArray.getJSONObject(i);
+                            status = jsonObject.getBoolean("status");
+                            stt_json_data = jsonObject.getString("data_user");
+                            message = jsonObject.getString("message");
+                        }//for
+                        Log.d("checkLogin","status ==> "+status+" message ==>"+message);
+                        if (status == true){
+                            Toast.makeText(MainActivity.this,"login สำเร็จ",Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(MainActivity.this,message,Toast.LENGTH_SHORT).show();
+                        }
+
+                    }catch (Exception e){
+                        Log.d("checkLogin", "catch ==> " + e.toString());
+                    }
+
+
+
+
                 }
 
             }
