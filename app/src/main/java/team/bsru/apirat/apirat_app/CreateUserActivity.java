@@ -44,7 +44,7 @@ public class CreateUserActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                createUserButton.setEnabled(false);
+
                 ShowAlert showAlert = new ShowAlert(CreateUserActivity.this);
                 if (strcodeEditText.getText().toString().equals("") || bookEditText.getText().toString().equals("") || userEditText.getText().toString().equals("") || passEditText.getText().toString().equals("") || confEditText.getText().toString().equals("")) {
                     showAlert.ShowDialog("have space", "try again ");
@@ -77,7 +77,7 @@ public class CreateUserActivity extends AppCompatActivity {
                                 finish();
 
                             } else {
-                                createUserButton.setEnabled(true);
+
                                 Toast.makeText(CreateUserActivity.this, massage, Toast.LENGTH_LONG).show();
                             }
                             Log.d("resp", "array try join==>" + status);
