@@ -52,6 +52,7 @@
         android:paddingLeft="14dp"
         android:paddingRight="14dp">
 
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
