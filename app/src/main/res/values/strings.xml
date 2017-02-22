@@ -9,6 +9,6 @@
     <string name="list_all">ดูรายการมาเรียน</string>
     <string name="showQR">QR CODE</string>
     <string name="str_call_ta">ติดต่อ TA</string>
-    <string name="exit">exit</string>
+    <string name="exit">EXIT</string>
     <string name="action_settings">Settings</string>
 </resources>
