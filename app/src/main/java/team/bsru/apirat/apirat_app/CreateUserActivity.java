@@ -71,7 +71,7 @@ public class CreateUserActivity extends AppCompatActivity {
                             }//for
                             if (status == true) {
                                 Toast.makeText(CreateUserActivity.this, massage, Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent(CreateUserActivity.this, ShowQR.class);
+                                Intent intent = new Intent(CreateUserActivity.this, MainActivity.class);
                                 intent.putExtra("pic", pathImg.toString());
                                 startActivity(intent);
                                 finish();
@@ -85,7 +85,8 @@ public class CreateUserActivity extends AppCompatActivity {
                             Log.d("resp", "array error join==>" + e.toString());
                         }
                     } else {
-                        showAlert.ShowDialog("false", passEditText.getText() + "==>" + confEditText.getText());
+                        // ถ้า password ไม่ตรงกัน ให้แสดง Toast alert ออกมา
+                        Toast.makeText(CreateUserActivity.this, "password ไม่ตรงกัน โปรดลองใหม่", Toast.LENGTH_LONG).show();
                     }
 
                 }

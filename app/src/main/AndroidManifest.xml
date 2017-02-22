@@ -23,12 +23,20 @@
             android:name=".CreateUserActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ShowQR"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".Showinfo_Activty"
             android:screenOrientation="portrait" />
-        <activity android:name=".Main_student_layout"></activity>
+        <activity
+            android:name=".Main_student_layout"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".show_QR"
+            android:label="@string/title_activity_show__qr"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"></activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>

@@ -105,7 +105,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/SingIn"
             android:layout_marginTop="25dp"
-            android:background="#237db8"
+            android:background="@drawable/btn_sty"
+
             android:textSize="21sp"
             android:textAllCaps="false"
             android:textColor="@android:color/background_light"

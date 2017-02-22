@@ -110,7 +110,7 @@
 
                 <ImageButton
                     android:layout_width="69dp"
-                    android:id="@+id/imageButton6"
+                    android:id="@+id/btn_show_qr"
                     android:background="#00ffffff"
                     android:scaleType="fitCenter"
                     android:elevation="0dp"

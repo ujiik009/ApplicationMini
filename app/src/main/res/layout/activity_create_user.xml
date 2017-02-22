@@ -101,7 +101,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/createButton"
                     android:layout_marginTop="50dp"
-                    android:background="#3bb4d0"
+                    android:background="@drawable/btn_sty"
                     android:textColor="#cdffffff"
                     android:textStyle="normal|bold" />
 
