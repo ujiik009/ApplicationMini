@@ -28,6 +28,7 @@
         <activity
             android:name=".Showinfo_Activty"
             android:screenOrientation="portrait" />
+        <activity android:name=".Main_student_layout"></activity>
     </application>
 
 </manifest>

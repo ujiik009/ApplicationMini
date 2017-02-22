@@ -22,12 +22,12 @@
         android:gravity="center_horizontal"
         android:paddingTop="70dp"
         android:paddingBottom="10dp"
-        android:background="#c3f1e4e4">
+        android:background="#c5c9d2ea">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_alignParentTop="true"
-            app:srcCompat="@drawable/marnar"
+            app:srcCompat="@drawable/marnar3"
             android:layout_centerHorizontal="true"
             android:layout_width="180dp"
             android:layout_height="180dp" />
@@ -42,7 +42,8 @@
         android:layout_marginTop="-10dp"
         android:paddingLeft="40dp"
         android:paddingRight="40dp"
-        android:background="#c3f1e4e4">
+        android:background="#c5c9d2ea"
+        android:paddingTop="20dp">
 
 
         <LinearLayout

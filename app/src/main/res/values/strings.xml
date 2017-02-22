@@ -4,6 +4,11 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
+    <string name="over_view">ดูข้อมูลโดยรวม</string>
+    <string name="str_profile">ดูข้อมูลส่วนตัว</string>
+    <string name="list_all">ดูรายการมาเรียน</string>
+    <string name="showQR">QR CODE</string>
+    <string name="str_call_ta">ติดต่อ TA</string>
+    <string name="exit">exit</string>
     <string name="action_settings">Settings</string>
 </resources>

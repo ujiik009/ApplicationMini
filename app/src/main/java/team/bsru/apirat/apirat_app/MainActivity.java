@@ -61,9 +61,10 @@ public class MainActivity extends AppCompatActivity {
                         if (status == true){
                             Log.d("checkLogin","json data string ==> "+str_json_data);
                             Toast.makeText(MainActivity.this,"login สำเร็จ",Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(MainActivity.this, Showinfo_Activty.class);
+                            Intent intent = new Intent(MainActivity.this, Main_student_layout.class);
                             intent.putExtra("str_json_data", str_json_data);
                             startActivity(intent);
+                            finish();
                         }else{
                             Toast.makeText(MainActivity.this,message,Toast.LENGTH_SHORT).show();
                         }
