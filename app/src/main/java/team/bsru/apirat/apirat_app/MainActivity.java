@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                             str_json_ta = jsonObject.getString("data_ta");
                             message = jsonObject.getString("message");
                         }//for
-                        Log.d("checkLogin","status ==> "+status+" message ==>"+message);
+
                         if (status == true){
                             Log.d("checkLogin","json data string ==> "+str_json_data);
                             Toast.makeText(MainActivity.this,"login สำเร็จ",Toast.LENGTH_SHORT).show();

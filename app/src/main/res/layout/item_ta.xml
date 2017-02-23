@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginBottom="7dp"
+        android:padding="3dp">
+
+        <ImageView
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/common_google_signin_btn_icon_dark_disabled"
+            android:id="@+id/img_ta"
+            android:layout_width="90dp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:text="TA ice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/name_ta_textVeiw"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="18sp"
+                android:textStyle="normal|bold"
+                android:paddingLeft="5dp" />
+
+            <TextView
+                android:text="028900407"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:id="@+id/tel_ta_textView"
+                android:paddingLeft="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="59dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.02"
+            android:gravity="center_vertical">
+
+            <ImageView
+                app:srcCompat="@mipmap/call"
+                android:id="@+id/imageView4"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

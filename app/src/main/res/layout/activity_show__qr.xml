@@ -60,9 +60,11 @@
                 android:text="BACK"
                 android:layout_width="match_parent"
                 android:id="@+id/btn_back"
-                android:layout_weight="0.4"
+                android:layout_weight="1"
                 android:layout_height="60dp"
-                android:background="#f9ffa6" />
+                android:background="#F1B516"
+                android:textColor="@android:color/white"
+                android:textSize="24sp" />
         </LinearLayout>
 
     </LinearLayout>
