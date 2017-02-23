@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText user_input, pass_input;
     private Boolean status;
     private String message;
-    private String str_json_data;
+    private String str_json_data,str_json_ta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                             JSONObject jsonObject = respontServiceJsonArray.getJSONObject(i);
                             status = jsonObject.getBoolean("status");
                             str_json_data = jsonObject.getString("data_user");
+                            str_json_ta = jsonObject.getString("data_ta");
                             message = jsonObject.getString("message");
                         }//for
                         Log.d("checkLogin","status ==> "+status+" message ==>"+message);
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(MainActivity.this,"login สำเร็จ",Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(MainActivity.this, Main_student_layout.class);
                             intent.putExtra("str_json_data", str_json_data);
+                            intent.putExtra("data_TA", str_json_ta);
                             startActivity(intent);
                             finish();
                         }else{

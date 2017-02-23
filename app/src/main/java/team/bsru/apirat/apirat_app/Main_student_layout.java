@@ -15,11 +15,8 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 public class Main_student_layout extends AppCompatActivity {
     private String str_json;
-    private ImageButton exitImageButton, showQRButton;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
+    private ImageButton exitImageButton, showQRButton, callTAButton;
+
     private GoogleApiClient client;
 
     @Override
@@ -32,7 +29,7 @@ public class Main_student_layout extends AppCompatActivity {
         // bind widget
         exitImageButton = (ImageButton) findViewById(R.id.btn_exit);
         showQRButton = (ImageButton) findViewById(R.id.btn_show_qr);
-
+        callTAButton = (ImageButton) findViewById(R.id.btn_callAT);
         // button controller
         exitImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,44 +49,14 @@ public class Main_student_layout extends AppCompatActivity {
 
             }
         });
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
-    }
 
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    public Action getIndexApiAction() {
-        Thing object = new Thing.Builder()
-                .setName("Main_student_layout Page") // TODO: Define a title for the content shown.
-                // TODO: Make sure this auto-generated URL is correct.
-                .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
-                .build();
-        return new Action.Builder(Action.TYPE_VIEW)
-                .setObject(object)
-                .setActionStatus(Action.STATUS_TYPE_COMPLETED)
-                .build();
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
-        AppIndex.AppIndexApi.start(client, getIndexApiAction());
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        AppIndex.AppIndexApi.end(client, getIndexApiAction());
-        client.disconnect();
+        callTAButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Main_student_layout.this, Call_TA.class);
+                intent.putExtra("data_ta", getIntent().getStringExtra("data_TA").toString());
+                startActivity(intent);
+            }
+        });
     }
 }
