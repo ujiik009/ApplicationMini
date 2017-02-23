@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 ShowAlert showAlert = new ShowAlert(MainActivity.this);
                 if (user_input.getText().toString().trim().equals("")||pass_input.getText().toString().trim().equals("")) {
 
-                    showAlert.ShowDialog("Have Space","Try again");
+                    Toast.makeText(MainActivity.this, "กรุณากรอกให้ครบ", Toast.LENGTH_SHORT).show();
                 }else{
                     try {
                         //showAlert.ShowDialog("Welcome",user_input.getText().toString());

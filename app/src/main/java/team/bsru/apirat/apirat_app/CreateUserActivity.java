@@ -47,7 +47,7 @@ public class CreateUserActivity extends AppCompatActivity {
 
                 ShowAlert showAlert = new ShowAlert(CreateUserActivity.this);
                 if (strcodeEditText.getText().toString().equals("") || bookEditText.getText().toString().equals("") || userEditText.getText().toString().equals("") || passEditText.getText().toString().equals("") || confEditText.getText().toString().equals("")) {
-                    showAlert.ShowDialog("have space", "try again ");
+                    Toast.makeText(CreateUserActivity.this, "กรุณากรอกให้ครบ", Toast.LENGTH_SHORT).show();
                 } else {
                     if (passEditText.getText().toString().equals(confEditText.getText().toString())) {
 
