@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 /**
  * Created by ikool009 on 24/2/2560.
  */
@@ -21,6 +23,7 @@ public class Adapter_ta extends BaseAdapter {
     private String[] img_address;
     private TextView nameTextView, telTextView;
     private ImageView img_ta;
+    private CircleImageView circleImageView;
 
     public Adapter_ta(Context context, String[] name, String[] tel, String[] img_address) {
         this.context = context;
@@ -51,11 +54,12 @@ public class Adapter_ta extends BaseAdapter {
         View view1 = layoutInflater.inflate(R.layout.item_ta, viewGroup, false);
         nameTextView = (TextView) view1.findViewById(R.id.name_ta_textVeiw);
         telTextView = (TextView) view1.findViewById(R.id.tel_ta_textView);
-        img_ta = (ImageView) view1.findViewById(R.id.img_ta);
+        //img_ta = (ImageView) view1.findViewById(R.id.img_ta);
+        circleImageView = (CircleImageView) view1.findViewById(R.id.img_ta);
 
         nameTextView.setText("TA "+name[i].toString());
         telTextView.setText(tel[i].toString());
-        Picasso.with(context).load(img_address[i].toString()).into(img_ta);
+        Picasso.with(context).load(img_address[i].toString()).into(circleImageView);
 
 
         return view1;
