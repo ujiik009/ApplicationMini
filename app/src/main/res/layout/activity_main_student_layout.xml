@@ -46,7 +46,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:id="@+id/imageButton"
+                    android:id="@+id/show_profile"
                     app:srcCompat="@mipmap/profile"
                     android:background="#00ffffff"
                     android:layout_weight="1" />

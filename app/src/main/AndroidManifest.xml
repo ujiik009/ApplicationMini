@@ -42,7 +42,8 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".Call_TA"></activity>
+        <activity android:name=".Call_TA" />
+        <activity android:name=".show_profile"></activity>
     </application>
 
 </manifest>

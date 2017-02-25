@@ -56,7 +56,6 @@ public class Adapter_ta extends BaseAdapter {
         telTextView = (TextView) view1.findViewById(R.id.tel_ta_textView);
         //img_ta = (ImageView) view1.findViewById(R.id.img_ta);
         circleImageView = (CircleImageView) view1.findViewById(R.id.img_ta);
-
         nameTextView.setText("TA "+name[i].toString());
         telTextView.setText(tel[i].toString());
         Picasso.with(context).load(img_address[i].toString()).into(circleImageView);
