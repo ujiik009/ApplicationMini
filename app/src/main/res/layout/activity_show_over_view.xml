@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_show_over_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="team.bsru.apirat.apirat_app.ShowOverView"
+    android:background="@drawable/bgschool">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="?attr/actionBarTheme"
+        android:minHeight="?attr/actionBarSize"
+        android:id="@+id/toolber_overview"
+        app:title="@string/over_view"
+        app:titleTextColor="@color/common_google_signin_btn_text_dark_default" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolber_overview"
+        android:background="#a9111010"
+        android:gravity="center"
+        android:id="@+id/main">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:text="@string/countdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView10"
+                        android:layout_weight="1"
+                        android:textColor="@color/common_google_signin_btn_text_dark_default"
+                        android:textSize="18sp"
+                        android:textStyle="normal|bold" />
+
+                    <Button
+                        android:id ="@+id/push_button1"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:background="@drawable/button_blue_roll"
+                        android:padding="15dp"
+                        android:gravity="center"
+                        android:text="N/A"
+                        android:layout_weight="1"
+                        android:textStyle="normal|bold"
+                        android:textSize="24sp"
+                        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:text="มาเรียน"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView12"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default"
+                    android:textStyle="normal|bold" />
+
+                <Button
+                    android:id ="@+id/push_button"
+                    android:text="N/A"
+                    android:background="@drawable/button_green_roll"
+                    android:gravity="center"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:textStyle="normal|bold"
+                    android:textSize="24sp"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+                <TextView
+                    android:text="ขาดเรียน"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView14"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default"
+                    android:textAlignment="center"
+                    android:textStyle="normal|bold"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id ="@+id/push_button4"
+                    android:text="N/A"
+                    android:background="@drawable/button_red_roll"
+                    android:padding="15dp"
+                    android:gravity="center"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:textStyle="normal|bold"
+                    android:textSize="24sp"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:foregroundGravity="left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center">
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:text="BACK"
+        android:layout_width="match_parent"
+        android:id="@+id/btn_back_overview"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:background="#F1B516"
+        android:textSize="24sp" />
+</RelativeLayout>

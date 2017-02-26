@@ -15,7 +15,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 public class Main_student_layout extends AppCompatActivity {
     private String str_json;
-    private ImageButton exitImageButton, showQRButton, callTAButton,show_profileButton,ViewListImageButton;
+    private ImageButton exitImageButton, showQRButton, callTAButton,show_profileButton,ViewListImageButton,overviewbtn;
 
     private GoogleApiClient client;
 
@@ -32,6 +32,7 @@ public class Main_student_layout extends AppCompatActivity {
         callTAButton = (ImageButton) findViewById(R.id.btn_callAT);
         show_profileButton = (ImageButton) findViewById(R.id.show_profile);
         ViewListImageButton = (ImageButton) findViewById(R.id.showViewList);
+        overviewbtn = (ImageButton) findViewById(R.id.btn_overview);
         // button controller
         exitImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +40,14 @@ public class Main_student_layout extends AppCompatActivity {
 
                 Process.killProcess(Process.myPid());
                 System.exit(1);
+            }
+        });
+        overviewbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Main_student_layout.this, ShowOverView.class);
+                intent.putExtra("data_json",str_json);
+                startActivity(intent);
             }
         });
 

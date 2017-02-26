@@ -42,9 +42,19 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".Call_TA" />
-        <activity android:name=".show_profile" />
-        <activity android:name=".ShowListView_in_classroom"></activity>
+        <activity
+            android:name=".Call_TA"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".show_profile"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ShowListView_in_classroom"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ShowOverView"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

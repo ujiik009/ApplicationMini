@@ -17,4 +17,6 @@
     <string name="fname_lname">ชื่อ-นามสกุล</string>
     <string name="book_code">รหัสหนังสือ</string>
     <string name="num_user">ลำดับที่ในชั้นเรียน</string>
+    <string name="title_activity_show_over_view">showOverView</string>
+    <string name="countdate">จำนวนครั้งที่เช็ก</string>
 </resources>
