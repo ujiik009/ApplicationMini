@@ -3,6 +3,8 @@ package team.bsru.apirat.apirat_app;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -13,6 +15,7 @@ public class ShowListView_in_classroom extends AppCompatActivity {
     private String Json_String, student_code, student_sec,json_list_array;
     private Boolean status_server;
     private ListView show_list;
+    private Button backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +23,7 @@ public class ShowListView_in_classroom extends AppCompatActivity {
         setContentView(R.layout.activity_show_list_view_in_classroom);
         Json_String = getIntent().getStringExtra("json_data").toString();
         show_list = (ListView) findViewById(R.id.showListViews);
+        backButton = (Button) findViewById(R.id.btn_backlist);
         try {
             JSONObject jsonObject = new JSONObject(Json_String);
             student_code = jsonObject.getString("student_code");
@@ -68,6 +72,13 @@ public class ShowListView_in_classroom extends AppCompatActivity {
         } catch (Exception e) {
 
         }
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
     }
 }

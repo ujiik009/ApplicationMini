@@ -48,7 +48,14 @@ public class Adapter_list_date extends BaseAdapter{
 
         numtimeTextView.setText("ครั้งที่ "+(i+1));
         datetimeTextView.setText(date[i]);
-        statusTextView.setText(status[i]);
+
+        if (status[i].equals("true")){
+            statusTextView.setBackgroundResource(R.color.pass);
+            statusTextView.setText("มา");
+        }else{
+            statusTextView.setBackgroundResource(R.color.notpass);
+            statusTextView.setText("ขาด");
+        }
 
 
         return view1;

@@ -16,7 +16,8 @@
             android:id="@+id/numdate"
             android:layout_weight="1"
             android:textAlignment="center"
-            android:gravity="fill_vertical" />
+            android:gravity="fill_vertical"
+            android:textSize="24sp" />
 
         <TextView
             android:text="26-02-2017"
@@ -25,7 +26,8 @@
             android:id="@+id/date"
             android:layout_weight="1"
             android:gravity="fill_vertical"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="18sp" />
 
         <TextView
             android:text="ขาด"
@@ -38,5 +40,6 @@
             android:background="@android:color/holo_red_light"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:gravity="center" />
+
     </LinearLayout>
 </LinearLayout>
