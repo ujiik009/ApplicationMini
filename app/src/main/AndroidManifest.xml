@@ -43,7 +43,8 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name=".Call_TA" />
-        <activity android:name=".show_profile"></activity>
+        <activity android:name=".show_profile" />
+        <activity android:name=".ShowListView_in_classroom"></activity>
     </application>
 
 </manifest>

@@ -55,7 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     app:srcCompat="@mipmap/show_list"
-                    android:id="@+id/imageButton2"
+                    android:id="@+id/showViewList"
                     android:background="#00ffffff"
                     android:layout_weight="1" />
 

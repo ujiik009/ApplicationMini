@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:text="ครั้งที่ 1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/numdate"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:gravity="fill_vertical" />
+
+        <TextView
+            android:text="26-02-2017"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/date"
+            android:layout_weight="1"
+            android:gravity="fill_vertical"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="ขาด"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:id="@+id/status"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:background="@android:color/holo_red_light"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:gravity="center" />
+    </LinearLayout>
+</LinearLayout>
